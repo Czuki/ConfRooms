@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+    <head>
+        <link rel='stylesheet' href="{% static 'css/ConfRooms/ConfRoom.css' %}">
+        <title>Conference Rooms</title>
+    </head>
+
+    <body>
+
+        <h1 class="title">Conference Rooms for rent</h1>
+        <div class="navbar">
+            <a href="/home">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Menu
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/room/list/">Available Rooms</a>
+                    <a href="/room/new/">Add Rooms</a>
+                </div>
+            </div>
+        </div>
+
+    <div class="footer">
+        <p>Made by Czuki</p>
+    </div>
+
+
+    {% block content %}
+
+    {% endblock content %}
+    </body>
+</html>

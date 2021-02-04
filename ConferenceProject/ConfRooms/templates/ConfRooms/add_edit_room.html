@@ -1,0 +1,45 @@
+{% extends 'ConfRooms/base.html' %}
+
+{% block content %}
+
+{% if room_to_edit %}
+
+<form action="" method="post"> {% csrf_token %}
+
+    <label for="room_name">Name: </label>
+    <input type="text" name="room_name" id="room_name" value="{{room_to_edit.name}}">
+
+    <label for="capacity">Capacity: </label>
+    <input type="number" name="capacity" min="1" max="500" step="1" id="capacity" value="{{room_to_edit.capacity}}">
+
+    <label for="projector">Has Projector: </label>
+    <input type="checkbox" name="projector" id="projector" value="{{room_to_edit.projector}}">
+
+    <button type="submit">OK</button>
+
+</form>
+
+{% else %}
+
+<form action="" method="post"> {% csrf_token %}
+
+    <label for="room_name">Name: </label>
+    <input type="text" name="room_name" id="room_name">
+
+    <label for="capacity">Capacity: </label>
+    <input type="number" name="capacity" min="1" max="500" step="1" id="capacity">
+
+    <label for="projector">Has Projector: </label>
+    <input type="checkbox" name="projector" id="projector">
+
+    <button type="submit">OK</button>
+
+</form>
+
+{% endif %}
+
+{% if error %}
+    {{error}}
+{% endif %}
+
+{% endblock content %}
