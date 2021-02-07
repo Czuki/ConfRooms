@@ -17,14 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from ConfRooms.views import HomeView, AddRoom, ShowRooms, DeleteRoom, EditRoom, ReserveRoom
+
+from ConfRooms import views as confrooms
+
+#HomeView, AddRoom, ShowRooms, DeleteRoom, EditRoom, ReserveRoom, DetailsRoom
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', HomeView.as_view()),
-    path('room/new/', AddRoom.as_view()),
-    path('room/list/', ShowRooms.as_view()),
-    path('room/delete/<int:room_pk>/', DeleteRoom.as_view()),
-    path('room/modify/<int:room_pk>/', EditRoom.as_view()),
-    path('room/reserve/<int:room_pk>/', ReserveRoom.as_view()),
+    path('home/', confrooms.HomeView.as_view()),
+    path('room/new/', confrooms.AddRoom.as_view()),
+    path('room/list/', confrooms.ShowRooms.as_view()),
+    path('room/delete/<int:room_pk>/', confrooms.DeleteRoom.as_view()),
+    path('room/modify/<int:room_pk>/', confrooms.EditRoom.as_view()),
+    path('room/reserve/<int:room_pk>/', confrooms.ReserveRoom.as_view()),
+    path('room/details/<int:room_pk>/', confrooms.DetailsRoom.as_view()),
 ]

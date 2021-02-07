@@ -2,19 +2,16 @@
 
 {% block content %}
 
-<table id="rooms">
+<table>
     <tr>
         <td>ID</td>
         <td>Name</td>
         <td>Capacity</td>
         <td>Projector</td>
     </tr>
-
-{% for room in rooms %}
-
     <tr>
         <td>{{room.pk}}</td>
-        <td><a href="/room/details/{{room.pk}}/">{{room.name}}</a></td>
+        <td>{{room.name}}</td>
         <td>{{room.capacity}}</td>
         <td>
             {% if room.projector %}
@@ -27,13 +24,14 @@
         <td><a href="/room/delete/{{room.pk}}">Delete</a></td>
         <td><a href="/room/reserve/{{room.pk}}">Make a Reservation</a></td>
     </tr>
-
-{% empty %}
-
-    <li>Sorry, no rooms in this database.</li>
-
-{% endfor %}
-
 </table>
-
+{% if reservations %}
+<ul>
+    {% for reservation in reservations %}
+        <li>{{reservation.date}}  {{reservation.comment}}</li>
+    {% endfor %}
+</ul>
+{% else %}
+    Room has not been booked yet
+{% endif %}
 {% endblock content %}

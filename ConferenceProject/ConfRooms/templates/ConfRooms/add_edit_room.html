@@ -7,10 +7,10 @@
 <form action="" method="post"> {% csrf_token %}
 
     <label for="room_name">Name: </label>
-    <input type="text" name="room_name" id="room_name" value="{{room_to_edit.name}}">
+    <input type="text" name="room_name" id="room_name" value="{{room_to_edit.name}}" required>
 
     <label for="capacity">Capacity: </label>
-    <input type="number" name="capacity" min="1" max="500" step="1" id="capacity" value="{{room_to_edit.capacity}}">
+    <input type="number" name="capacity" min="1" max="500" step="1" id="capacity" value="{{room_to_edit.capacity}}" required>
 
     <label for="projector">Has Projector: </label>
     <input type="checkbox" name="projector" id="projector" value="{{room_to_edit.projector}}">
@@ -24,10 +24,10 @@
 <form action="" method="post"> {% csrf_token %}
 
     <label for="room_name">Name: </label>
-    <input type="text" name="room_name" id="room_name">
+    <input type="text" name="room_name" id="room_name" required>
 
     <label for="capacity">Capacity: </label>
-    <input type="number" name="capacity" min="1" max="500" step="1" id="capacity">
+    <input type="number" name="capacity" min="1" max="500" step="1" id="capacity" required>
 
     <label for="projector">Has Projector: </label>
     <input type="checkbox" name="projector" id="projector">

@@ -7,7 +7,7 @@
 <form action="" method="post">{% csrf_token %}
 
     <label for="reservation_date">Reservation Date: </label>
-    <input type="date" name="reservation_date" id="reservation_date">
+    <input type="date" name="reservation_date" id="reservation_date" required>
 
     <label for="comment">Comment: </label>
     <input type="text" name="comment" id="comment">
@@ -15,5 +15,19 @@
     <button type="submit">OK</button>
 
 </form>
+
+{% if reservations %}
+
+<ul>
+    {% for reservation in reservations %}
+
+        <li>{{reservation.date}}  {{reservation.comment}}</li>
+
+    {% endfor %}
+</ul>
+
+{% else %}
+    Room has not been booked yet
+{% endif %}
 
 {% endblock content %}
