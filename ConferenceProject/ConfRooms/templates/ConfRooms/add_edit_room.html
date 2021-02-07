@@ -5,35 +5,42 @@
 {% if room_to_edit %}
 
 <form action="" method="post"> {% csrf_token %}
-
+<div class="formdivider">
     <label for="room_name">Name: </label>
     <input type="text" name="room_name" id="room_name" value="{{room_to_edit.name}}" required>
-
+</div>
+<div class="formdivider">
     <label for="capacity">Capacity: </label>
     <input type="number" name="capacity" min="1" max="500" step="1" id="capacity" value="{{room_to_edit.capacity}}" required>
-
+</div>
+<div class="formdivider">
     <label for="projector">Has Projector: </label>
     <input type="checkbox" name="projector" id="projector" value="{{room_to_edit.projector}}">
-
+</div>
+<div class="formdivider">
     <button type="submit">OK</button>
+</div>
 
 </form>
 
 {% else %}
 
 <form action="" method="post"> {% csrf_token %}
-
+<div class="formdivider">
     <label for="room_name">Name: </label>
     <input type="text" name="room_name" id="room_name" required>
-
+</div>
+<div class="formdivider">
     <label for="capacity">Capacity: </label>
     <input type="number" name="capacity" min="1" max="500" step="1" id="capacity" required>
-
+</div>
+<div class="formdivider">
     <label for="projector">Has Projector: </label>
     <input type="checkbox" name="projector" id="projector">
-
+</div>
+<div class="formdivider">
     <button type="submit">OK</button>
-
+</div>
 </form>
 
 {% endif %}

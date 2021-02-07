@@ -22,7 +22,9 @@
         </div>
 
     <div class="footer">
-        <p>Made by Czuki</p>
+        <br>
+        Made by Czuki </br>
+        <a href="https://github.com/Czuki"> <img src="{% static 'css/GitHub-Mark-32px.png' %}" alt="GitHub" style="padding: 10px;"> </a>
     </div>
 
     {% block content %}
@@ -44,8 +46,6 @@ Search Rooms:
     {% for result in search_results %}
         <p><a href="/room/details/{{result.pk}}/">{{result}}</a></p>
     {% endfor %}
-
-
 
     {% endblock content %}
     </body>
