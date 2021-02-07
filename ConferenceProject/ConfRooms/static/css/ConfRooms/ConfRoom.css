@@ -1,23 +1,29 @@
 .title {
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
   display: block;
+}
+
+body {
+  margin-bottom: 60px;
 }
 
 .footer {
   position: fixed;
+  min-height: 40px;
   left: 0;
   bottom: 0;
   width: 100%;
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: black;
   color: white;
   text-align: center;
+  display: inline-block;
 }
 
 .navbar {
   overflow: hidden;
   background-color: #333;
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Links inside the navbar */
@@ -50,7 +56,7 @@
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #2A7E53;
 }
 
 /* Dropdown content (hidden by default) */
@@ -75,7 +81,8 @@
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #2A7E53;
+  color: white;
 }
 
 /* Show the dropdown menu on hover */
@@ -97,8 +104,7 @@
 
 #rooms tr:nth-child(even){color: white; background-color: #333;}
 
-
-#rooms tr:hover {background-color: red;}
+#rooms tr:hover {background-color: #2A7E53;}
 
 #rooms th {
   padding-top: 12px;
@@ -106,4 +112,27 @@
   text-align: left;
   background-color: #333;
   color: white;
+}
+
+#rooms a:link, #rooms a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid #5BC886;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+#rooms a:hover, #rooms a:active {
+  background-color: #5BC886;
+  color: white;
+}
+
+ul li{
+  font-family: Arial, Helvetica, sans-serif;
+  border-left: 5px solid #2A7E53;
+  background-color: #f1f1f1;
+  list-style-type: none;
+  padding: 10px 20px;
 }

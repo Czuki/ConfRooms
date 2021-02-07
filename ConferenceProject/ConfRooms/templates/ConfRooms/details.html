@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<table>
+<table id="rooms">
     <tr>
         <td>ID</td>
         <td>Name</td>
@@ -25,6 +25,7 @@
         <td><a href="/room/reserve/{{room.pk}}">Make a Reservation</a></td>
     </tr>
 </table>
+
 {% if reservations %}
 <ul>
     {% for reservation in reservations %}
