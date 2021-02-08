@@ -20,7 +20,6 @@ from django.urls import path
 
 from ConfRooms import views as confrooms
 
-#HomeView, AddRoom, ShowRooms, DeleteRoom, EditRoom, ReserveRoom, DetailsRoom
 
 urlpatterns = [
     path('admin/', admin.site.urls),
