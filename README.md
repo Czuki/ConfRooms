@@ -1,6 +1,6 @@
 # ConfRooms
 
-Simple webapp that helps to manage booking of conference rooms
+Simple Django webapp that helps to manage booking of conference rooms
 
 Home View with search window
 
